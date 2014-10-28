@@ -1,0 +1,37 @@
+<h2>Books</h2>
+
+<%#= render "all_media/rankings", :item => @books %>
+
+<table>
+  <tbody>
+
+    <tr>
+      <th>
+        Ranking
+      </th>
+      <th>
+        Name
+      </th>
+      <th>
+        Upvote
+      </th>
+    </tr>
+
+    <% @books.each do |m| %>
+    <tr>
+      <td>
+        Ranked: <%= m.rank %>
+      </td>
+      <td>
+        <%= m.title %>
+      </td>
+      <td>
+        <%= button_to "Upvote", update_book_path(m.id), method: :patch%>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "View All Media", root_path%>
+<%= link_to "Create New Book", new_book_path %>

@@ -1,6 +1,9 @@
 class MoviesController < ApplicationController
   def index
-    @movies = Movie.all
+    @movies = Movie.all.sort_by {|movie| -movie.rank}
+  end
+
+  def new
   end
 
   def show
@@ -10,9 +13,13 @@ class MoviesController < ApplicationController
   end
 
   def update
-  end
-
-  def new
+    @movie = Movie.find(params[:id])
+    @movie.rank += 1
+    if @movie.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def create

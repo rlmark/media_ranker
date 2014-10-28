@@ -1,0 +1,33 @@
+<% media ||= @movies %>
+<% media ||= @books %>
+
+<table>
+  <tbody>
+
+    <tr>
+      <th>
+        Ranking
+      </th>
+      <th>
+        Name
+      </th>
+      <th>
+        Upvote
+      </th>
+    </tr>
+
+    <% media.each do |m| %>
+    <tr>
+      <td>
+        Ranked: <%= m.rank %>
+      </td>
+      <td>
+        <%= m.title %>
+      </td>
+      <td>
+        <%#= button_to "Upvote", action: "update[:id]" %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

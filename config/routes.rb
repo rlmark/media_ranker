@@ -1,7 +1,20 @@
 Rails.application.routes.draw do
-  get "/", to: "welcome#index", as: :root
+  # Home page
+  get "/", to: "home#index", as: :root
 
-  #
+  # Link to all books
+  get "/books", to: "books#index", as: :books
+  # Link to all movies
+  get "/movies", to: "movies#index", as: :movies
+
+  # Link to new book form
+  get "/books/new", to: "books#new", as: :new_book
+  # Link to new movie form
+  get "/movies/new", to: "movies#new", as: :new_movie
+
+  # Increment count voting for
+  patch "/books/:id", to: "books#update", as: :update_book
+  patch "/movies/:id", to: "movies#update", as: :update_movie
 
 
   # The priority is based upon order of creation: first created -> highest priority.

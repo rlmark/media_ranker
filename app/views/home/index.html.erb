@@ -1,0 +1,25 @@
+<div class="movies">
+  <h1>Movies</h1>
+
+  <%@movies.each do |movie| %>
+    <h2><%= movie.title %></h2>
+    Ranked: <%= movie.rank %>
+  <% end %>
+  <br>   <!-- Note: get rid of this br -->
+  <%= link_to "view more movies", movies_path %>
+</div>
+
+<div class="books">
+  <h1>Books</h1>
+    <% @books.each do |book| %>
+    <h2><%= book.title %></h2>
+    Ranked: <%= book.rank %>
+  <% end %>
+  <br>
+  <%= link_to "view more books", books_path %>
+</div>
+
+<div class="albums">
+  <h1>Albums</h1>
+
+</div>
