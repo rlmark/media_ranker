@@ -17,9 +17,11 @@ class MoviesController < ApplicationController
 
   def update
     @movie = Movie.find(params[:id])
-    @movie.rank += 1
-    if @movie.save
-      redirect_to root_path
+    if params[:movie][:upvote]
+      @movie.rank += 1
+    end
+    if @movie.update(params.require(:movie).permit(:title, :description, :director))
+      redirect_to movie_path(@movie.id)
     else
       render :new
     end
@@ -36,5 +38,8 @@ class MoviesController < ApplicationController
   end
 
   def destroy
+    @movie = Movie.find(params[:id])
+    @movie.destroy
+    redirect_to movies_path
   end
 end

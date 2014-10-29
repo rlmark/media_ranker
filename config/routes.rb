@@ -31,6 +31,12 @@ Rails.application.routes.draw do
   get "/books/:id/edit", to: "books#edit", as: :edit_book
   get "/movies/:id/edit", to: "movies#edit", as: :edit_movie
   get "/albums/:id/edit", to: "albums#edit", as: :edit_album
+
+  # Delete media objects
+  delete "/books/:id/delete", to: "books#destroy", as: :delete_book
+  delete "/movies/:id/delete", to: "movies#destroy", as: :delete_movie
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -26,7 +26,7 @@
         <%= link_to m.title, movie_path(m.id) %>
       </td>
       <td>
-        <%= button_to "Upvote", update_movie_path(m.id), method: :patch%>
+        <%= button_to "Upvote", update_movie_path(m.id), params:{'movie[upvote]' => true},method: :patch%>
       </td>
     </tr>
     <% end %>
