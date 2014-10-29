@@ -26,7 +26,7 @@
         <%= link_to m.title, book_path(m.id) %>
       </td>
       <td>
-        <%= button_to "Upvote", update_book_path(m.id), params:{'book[rank]' => m.rank + 1}, method: :patch%>
+        <%= button_to "Upvote", update_book_path(m.id), params:{'book[upvote]' => true }, method: :patch%>
       </td>
     </tr>
     <% end %>

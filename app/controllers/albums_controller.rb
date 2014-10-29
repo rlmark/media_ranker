@@ -13,8 +13,10 @@ class AlbumsController < ApplicationController
 
   def update
     @album = Album.find(params[:id])
-    # @album.rank += 1
-    if @album.save
+    if params[:album][:upvote]
+      @album.rank += 1
+    end
+    if @album.update(params.require(:album).permit(:title, :artist, :description))
       redirect_to album_path(@album.id)
     else
       render :new
