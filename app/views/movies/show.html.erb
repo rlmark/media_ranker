@@ -1,0 +1,6 @@
+<h2><%= @movie.title %></h2>
+<%= @movie.director %>
+Rank: <%= @movie.rank %>
+<%= @movie.description %>
+
+<%= button_to "Upvote", update_movie_path(@movie.id), method: :patch%>

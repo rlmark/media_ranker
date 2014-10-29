@@ -1,0 +1,6 @@
+<h2><%= @album.title %></h2>
+<%= @album.rank %>
+<%= @album.artist %>
+<%= @album.description %>
+
+<%= button_to "Upvote", update_album_path(m.id), method: :patch%>

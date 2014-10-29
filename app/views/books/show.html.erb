@@ -1,0 +1,6 @@
+<h2><%= @book.title %></h2>
+<%= @book.rank %>
+<%= @book.author %>
+<%= @book.description %>
+
+<%= button_to "Upvote", update_book_path(@book.id), method: :patch%>

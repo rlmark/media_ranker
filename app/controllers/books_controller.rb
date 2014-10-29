@@ -4,6 +4,7 @@ class BooksController < ApplicationController
   end
 
   def show
+    @book = Book.find(params[:id])
   end
 
   def edit
@@ -13,7 +14,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @book.rank += 1
     if @book.save
-      redirect_to root_path
+      redirect_to book_path(@book.id)
     else
       render :new
     end

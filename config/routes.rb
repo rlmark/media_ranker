@@ -9,6 +9,12 @@ Rails.application.routes.draw do
   # Link to all albums
   get "/albums", to: "albums#index", as: :albums
 
+  # Link to specific media pages
+  get "/movie/:id", to: "movies#show", as: :movie
+  get "/album/:id", to: "albums#show", as: :album
+  get "/book/:id", to: "books#show", as: :book
+
+
   # Link to new book form
   get "/books/new", to: "books#new", as: :new_book
   # Link to new movie form
@@ -16,15 +22,18 @@ Rails.application.routes.draw do
   # link to new album form
   get "/albums/new", to: "albums#new", as: :new_album
 
-  # Increment count voting for
+  # Increment count voting for objects
   patch "/books/:id", to: "books#update", as: :update_book
   patch "/movies/:id", to: "movies#update", as: :update_movie
   patch "/albums/:id", to: "albums#update", as: :update_album
 
-  # Create new books
+  # Create new media objects
   post "/books", to: "books#create", as: :create_book
-  # Create new movies
-  
+  post "/movies", to: "movies#create", as: :create_movie
+  post "/albums", to: "albums#create", as: :create_albums
+
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
