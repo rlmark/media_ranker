@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   # Delete media objects
   delete "/books/:id/delete", to: "books#destroy", as: :delete_book
   delete "/movies/:id/delete", to: "movies#destroy", as: :delete_movie
+  delete "/albums/:id/delete", to: "albums#destroy", as: :delete_album
 
 
   # The priority is based upon order of creation: first created -> highest priority.
