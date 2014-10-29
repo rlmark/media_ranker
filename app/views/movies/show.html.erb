@@ -4,3 +4,6 @@ Rank: <%= @movie.rank %>
 <%= @movie.description %>
 
 <%= button_to "Upvote", update_movie_path(@movie.id), method: :patch%>
+<%= link_to "Edit #{@movie.title}", edit_movie_path(@movie.id) %>
+<%= link_to "View all media", root_path %>
+<%= link_to "View all moveis", movies_path %>
