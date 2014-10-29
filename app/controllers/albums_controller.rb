@@ -13,7 +13,7 @@ class AlbumsController < ApplicationController
 
   def update
     @album = Album.find(params[:id])
-    @album.rank += 1
+    # @album.rank += 1
     if @album.save
       redirect_to album_path(@album.id)
     else
@@ -22,7 +22,7 @@ class AlbumsController < ApplicationController
   end
 
   def new
-    @album = Album.new #why do this??? ask. 
+    @album = Album.new #why do this??? ask.
   end
 
   def create

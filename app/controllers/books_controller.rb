@@ -13,8 +13,7 @@ class BooksController < ApplicationController
 
   def update
     @book = Book.find(params[:id])
-    @book.rank += 1
-    if @book.save
+    if @book.update(params.require(:book).permit(:title, :price, :rank, :description))
       redirect_to book_path(@book.id)
     else
       render :new
