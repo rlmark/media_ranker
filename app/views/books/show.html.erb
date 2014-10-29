@@ -4,5 +4,6 @@
 <%= @book.description %>
 
 <%= button_to "Upvote", update_book_path(@book.id), method: :patch%>
+<%= link_to "Edit #{@book.title}", edit_book_path(@book.id) %>
 <%= link_to "View all media", root_path %>
 <%= link_to "View all books", books_path %>

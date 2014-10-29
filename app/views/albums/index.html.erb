@@ -1,3 +1,4 @@
+<h2>Albums</h2>
 <table>
   <tbody>
 
@@ -19,7 +20,7 @@
         Ranked: <%= m.rank %>
       </td>
       <td>
-        <%= m.title %>
+        <%= link_to m.title, album_path(m.id) %>
       </td>
       <td>
         <%= button_to "Upvote", update_album_path(m.id), method: :patch%>

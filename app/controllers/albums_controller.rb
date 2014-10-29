@@ -22,7 +22,7 @@ class AlbumsController < ApplicationController
   end
 
   def new
-    @album = Album.new
+    @album = Album.new #why do this??? ask. 
   end
 
   def create
