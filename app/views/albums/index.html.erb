@@ -23,7 +23,7 @@
         <%= link_to m.title, album_path(m.id) %>
       </td>
       <td>
-        <%= button_to "Upvote", update_album_path(m.id), params:{'album[:upvote]' => true}, method: :patch%>
+        <%= button_to "Upvote", update_album_path(m.id), params:{'album[:upvote]' => true}, method: :patch, :class => 'vote btn btn-default'%>
       </td>
     </tr>
     <% end %>
