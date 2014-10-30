@@ -1,3 +1,50 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//setting font default
+body {
+  font-family: 'Oxygen', sans-serif;
+  font-weight: 300;
+  color: #362026;
+}
+
+//header styling
+header {
+  background-color: pink;
+  padding: 40px 0;
+}
+
+header h1, {
+  margin: 0;
+  padding-left: 15px;
+  font-size: 2.7em;
+}
+
+header h2 {
+  padding-left: 15px;
+}
+
+//round icons
+.glyphicon {
+  text-align: center;
+  font-size: 4em;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: pink;
+  border-radius: 100%;
+}
+
+div.icon {
+  display: table;
+}
+
+// GRID
+.col-sm-4 h1{
+  text-align: center;
+  font-size: 2.5em;
+}
+
+.media-block:hover {
+  background-color: lightgray;
+}

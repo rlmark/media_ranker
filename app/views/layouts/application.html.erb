@@ -2,14 +2,19 @@
 <html>
 <head>
   <title>MediaRanker</title>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300' rel='stylesheet' type='text/css'>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
   <header>
-    <h1><%= link_to "Media Ranker", root_path %></h1>
+    <div class="logo container">
+      <h1><%= link_to "Media Ranker", root_path %></h1>
+      <h2>Ranking the best of everything</h2>
+    </div>
   </header>
 <%= yield %>
 
