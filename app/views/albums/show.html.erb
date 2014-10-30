@@ -1,7 +1,7 @@
 <div class="container show-page">
   <h2><%= @album.title %></h2>
-  <%= @album.rank %>
-  <%= @album.artist %>
+  <h4>Ranking: <%= @album.rank %></h4>
+  <h3>Artist: <%= @album.artist %></h3>
   <%= @album.description %>
 
   <%= button_to "Upvote", update_album_path(@album.id), params:{'album[:upvote]' => true}, method: :patch, class: "btn btn-default show-nav vote"%>

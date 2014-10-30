@@ -1,35 +1,39 @@
-<h2>Albums</h2>
-<table>
-  <tbody>
+<div class="container adjust-left">
 
-    <tr>
-      <th>
-        Ranking
-      </th>
-      <th>
-        Name
-      </th>
-      <th>
-        Upvote
-      </th>
-    </tr>
+  <h2>Albums</h2>
+  <table>
+    <tbody>
 
-    <% @albums.each do |m| %>
-    <tr>
-      <td>
-        Ranked: <%= m.rank %>
-      </td>
-      <td>
-        <%= link_to m.title, album_path(m.id) %>
-      </td>
-      <td>
-        <%= button_to "Upvote", update_album_path(m.id), params:{'album[:upvote]' => true}, method: :patch, :class => 'vote btn btn-default'%>
-      </td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tr>
+        <th>
+          Ranking
+        </th>
+        <th>
+          Name
+        </th>
+        <th>
+          Upvote
+        </th>
+      </tr>
+
+      <% @albums.each do |m| %>
+      <tr>
+        <td>
+          Ranked: <%= m.rank %>
+        </td>
+        <td>
+          <%= link_to m.title, album_path(m.id) %>
+        </td>
+        <td>
+          <%= button_to "Upvote", update_album_path(m.id), params:{'album[:upvote]' => true}, method: :patch, :class => 'vote btn btn-default'%>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 
 
-<%= link_to "View All Media", root_path%>
-<%= link_to "Create New Album", new_album_path %>
+  <%= link_to "View All Media", root_path, class: "btn btn-default"%>
+  <%= link_to "Create New Album", new_album_path, class: "btn btn-default" %>
+
+</div>
