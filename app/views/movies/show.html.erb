@@ -1,12 +1,12 @@
 <div class="container show-page">
   <h2><%= @movie.title %></h2>
-  <%= @movie.director %>
-  Rank: <%= @movie.rank %>
+  <h4>Ranking: <%= @movie.rank %></h4>
+  <h3>Director: <%= @movie.director %></h3>
   <%= @movie.description %>
-
-  <%= button_to "Upvote", update_movie_path(@movie.id), params:{'movie[upvote]' => true}, method: :patch%>
-  <%= link_to "Edit #{@movie.title}", edit_movie_path(@movie.id) %>
-  <%= link_to "Delete", delete_movie_path(@movie.id), method: :delete, data: { confirm: "Are you sure?" }%>
-  <%= link_to "View all media", root_path %>
-  <%= link_to "View all moveis", movies_path %>
+  <%= button_to "Upvote", update_movie_path(@movie.id), params:{'movie[upvote]' => true}, method: :patch, class: "btn btn-default vote"%>
+  <hr>
+  <%= link_to "Edit #{@movie.title}", edit_movie_path(@movie.id), class: "btn btn-default show-nav editing"%>
+  <%= link_to "Delete", delete_movie_path(@movie.id), method: :delete, data: { confirm: "Are you sure?"}, class: 'btn btn-default show-nav deletion' %>
+  <%= link_to "View all media", root_path, class: 'btn btn-default show-nav' %>
+  <%= link_to "View all moveis", movies_path, class: 'btn btn-default show-nav' %>
 </div>

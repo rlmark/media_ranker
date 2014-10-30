@@ -5,6 +5,7 @@
   <%= @album.description %>
 
   <%= button_to "Upvote", update_album_path(@album.id), params:{'album[:upvote]' => true}, method: :patch, class: "btn btn-default show-nav vote"%>
+  <hr>
   <%= link_to "Edit #{@album.title}", edit_album_path(@album.id), class: "btn btn-default show-nav editing" %>
   <%= link_to "Delete", delete_album_path(@album.id), method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-default show-nav deletion' %>
   <%= link_to "View all media", root_path, class: 'btn btn-default show-nav' %>

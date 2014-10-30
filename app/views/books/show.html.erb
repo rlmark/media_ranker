@@ -1,12 +1,13 @@
 <div class="container show-page">
   <h2><%= @book.title %></h2>
-  <%= @book.rank %>
-  <%= @book.author %>
+  <h4>Ranking: <%= @book.rank %></h4>
+  <h3>Author: <%= @book.author %></h3>
   <%= @book.description %>
 
-  <%= button_to "Upvote", update_book_path(@book.id), params:{'book[upvote]' => true }, method: :patch%>
-  <%= link_to "Edit #{@book.title}", edit_book_path(@book.id)%>
-  <%= link_to "Delete", delete_book_path(@book.id), method: :delete, data: {confirm: "Are you sure?"} %>
-  <%= link_to "View all media", root_path %>
-  <%= link_to "View all books", books_path %>
+  <%= button_to "Upvote", update_book_path(@book.id), params:{'book[upvote]' => true }, method: :patch, class: "btn btn-default vote"%>
+  <hr>
+  <%= link_to "Edit #{@book.title}", edit_book_path(@book.id), class: "btn btn-default show-nav editing"%>
+  <%= link_to "Delete", delete_book_path(@book.id), method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-default show-nav deletion' %>
+  <%= link_to "View all media", root_path, class: 'btn btn-default show-nav' %>
+  <%= link_to "View all books", books_path, class: 'btn btn-default show-nav' %>
 </div>
